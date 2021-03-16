@@ -24,7 +24,7 @@ const Layout = ({ children, title, description }) => {
   return (
     <>
       <SEO title={title} description={description} />
-      <Navbar toggleSidebar={toggleSidebar} />
+      <Navbar toggleSidebar={toggleSidebar} isOpen={isOpen} />
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       {children}
       {offset > windowHeight / 2 && (

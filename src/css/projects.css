@@ -45,6 +45,9 @@
   word-spacing: 0.5rem;
   color: var(--clr-grey-3);
 }
+.project-desc li { 
+    padding-left: 1rem;
+}
 .project-stack {
   margin-bottom: 1rem;
 }

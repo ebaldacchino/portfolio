@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
 import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
+import ReactMarkdown from "react-markdown"
 const query = graphql`
   query ProjectImgs {
     allImageSharp {
@@ -32,7 +33,9 @@ const Project = ({ description, github, image, stack, title, url, index }) => {
           {index < 9 ? `0${index + 1}` : index + 1}.
         </span>
         <h3>{title}</h3>
-        <p className="project-desc">{description}</p>
+        <ReactMarkdown className="project-desc">
+          {description}
+        </ReactMarkdown>
         <div className="project-stack">
           {stack.map((title, index) => (
             <span key={index}>{title}</span>

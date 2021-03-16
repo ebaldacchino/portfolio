@@ -64,6 +64,7 @@ Global Styles
   padding: 0;
   outline: none;
   box-sizing: border-box;
+  list-style-type: none; 
 }
 body {
   font-family: var(--ff-secondary);
@@ -73,13 +74,9 @@ body {
   font-size: 0.875rem;
   margin-top: 5rem;
 }
-ul {
-  list-style-type: none;
-}
 a {
   text-decoration: none;
 }
-
 h1,
 h2,
 h3,
