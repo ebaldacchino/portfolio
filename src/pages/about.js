@@ -28,19 +28,21 @@ const About = () => {
           <Image className="about-img" fluid={fluid} />
           <article className="about-text">
             <Title title="about me" />
-            <p>I'm a self taught developer based in Melbourne, Australia.</p>
             <p>
-              An exercise science graduate and fitness professional, I decided
-              on a change of career during the coronavirus lockdowns. My mind
-              spent a while dwelling on the idea of coding. Eventually, I
-              decided to dabble in javascript. After a few months, I was hooked.
-              The thrill of overcoming obstacles and broadening my knowledge
-              quickly became an obsession. It has since been the basis of my
-              day.
+              I'm a self taught developer based in Melbourne, Australia. Native
+              in Javascript, PHP is like my second language. When I'm giving my
+              eyes a break from a computer screen, you'll most likely find me at
+              the gym.
             </p>
             <p>
-              I'm seeking professional opportunities to continue growing and be
-              the best I can be.
+              More comfortable with front end, but that's because I've spent
+              most of my early learning there. I'm open to using whatever tool
+              that can complete the task. The main objective is to find a way to
+              do it well.
+            </p>
+            <p>
+              Currently seeking professional opportunities to continue growing
+              and be the best I can be.
             </p>
             <div className="about-stack">
               {[
@@ -51,6 +53,8 @@ const About = () => {
                 "gatsby",
                 "node",
                 "mongodb",
+                "wordpress",
+                "php",
               ].map((tech, index) => (
                 <span key={index}>{tech}</span>
               ))}
