@@ -1,7 +1,7 @@
 import React from "react"
 import Title from "./Title"
 import services from "../constants/services"
-import '../css/services.css'
+import "../css/services.css"
 
 const Services = () => {
   return (
@@ -18,12 +18,12 @@ const Services = () => {
               <p>{text}</p>
               {lists.map((list, id) => {
                 return (
-                  <>
-                    <ul key={id}>{list.title}:</ul>
+                  <ul key={id}>
+                    {list.title}:
                     {list.items.map((item, id) => {
                       return <li key={id}>{item}</li>
                     })}
-                  </>
+                  </ul>
                 )
               })}
             </article>
