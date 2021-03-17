@@ -20,7 +20,7 @@ const Hero = () => {
           </div>
         </article>
         <StaticImage
-        className='hero-img'
+          className="hero-img"
           src="../assets/hero-img.png"
           alt="Hero Image"
           placeholder="blurred"

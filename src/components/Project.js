@@ -1,9 +1,7 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
-// import ReactMarkdown from "react-markdown"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Bold = ({ children }) => <span className="bold">{children}</span>
@@ -37,18 +35,22 @@ const Project = ({
   url,
   index,
 }) => {
-  const desc = renderRichText(description, options)
-  console.log(desc)
   const img = getImage(gatsbyImageData)
   return (
     <article className="project">
-      {gatsbyImageData && <GatsbyImage className="project-img" image={img} />}
+      {gatsbyImageData && (
+        <GatsbyImage
+          className="project-img"
+          image={img}
+          alt={`${title} banner image`}
+        />
+      )}
       <div className="project-info">
         <span className="project-number">
           {index < 9 ? `0${index + 1}` : index + 1}.
         </span>
         <h3>{title}</h3>
-        {renderRichText(description, options)} 
+        {renderRichText(description, options)}
         <div className="project-stack">
           {stack.map((title, index) => (
             <span key={index}>{title}</span>
@@ -65,15 +67,6 @@ const Project = ({
       </div>
     </article>
   )
-}
-
-Project.propTypes = {
-  title: PropTypes.string.isRequired,
-  github: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  stack: PropTypes.arrayOf(PropTypes.string).isRequired,
-  description: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
 }
 
 export default Project

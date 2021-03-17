@@ -8,7 +8,11 @@ const About = () => {
     <Layout title="About" description="About me">
       <main className="about-page">
         <section className="section-center about-center">
-          <StaticImage className="about-img" src="../assets/hero-img.png" />
+          <StaticImage
+            className="about-img"
+            src="../assets/hero-img.png"
+            alt="Hero image"
+          />
           <article className="about-text">
             <Title title="about me" />
             <p>
