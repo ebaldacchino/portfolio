@@ -1,6 +1,6 @@
 import React from "react"
 import { FaCode, FaServer, FaGlobe } from "react-icons/fa"
-export default [
+const Services = [
   {
     id: 1,
     icon: <FaCode className="service-icon" />,
@@ -10,7 +10,7 @@ export default [
     lists: [
       {
         title: "Languages I speak",
-        items: ["HTML", "CSS", "JS"],
+        items: ["HTML", "CSS", "JS", "PHP"],
       },
       {
         title: "Libraries / frameworks that I use",
@@ -27,7 +27,11 @@ export default [
     lists: [
       {
         title: "I can program my backend with",
-        items: ["NodeJS", "ExpressJS", "PHP (with WordPress)"],
+        items: ["NodeJS", "ExpressJS", "PHP", "WordPress"],
+      },
+      {
+        title: "For CMS, I've used",
+        items: ["WordPress", "Contentful", "Strapi"],
       },
       {
         title: "Databases I use",
@@ -42,9 +46,15 @@ export default [
     text: "Have experimented with a few deployment environments",
     lists: [
       {
-        title: "Deployment environments I use",
-        items: ["Netlify", "Heroku", "Firebase"],
+        title: "Can deploy on",
+        items: [
+          "Netlify",
+          "Heroku",
+          "Firebase",
+          "Any environment with WordPress or NodeJS support",
+        ],
       },
     ],
   },
 ]
+export default Services
