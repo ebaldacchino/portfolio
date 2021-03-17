@@ -1,41 +1,54 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { graphql, useStaticQuery } from "gatsby"
-import Image from "gatsby-image"
 import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
-import ReactMarkdown from "react-markdown"
-const query = graphql`
-  query ProjectImgs {
-    allImageSharp {
-      nodes {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
-const Project = ({ description, github, image, stack, title, url, index }) => {
-  const images = useStaticQuery(query).allImageSharp.nodes
-  const filteredImg = images.find(img => img.fluid.src.includes(`${image}`))
-    .fluid
+import { BLOCKS, MARKS } from "@contentful/rich-text-types"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
+// import ReactMarkdown from "react-markdown"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
+const Bold = ({ children }) => <span className="bold">{children}</span>
+const Text = ({ children }) => <p className="align-center">{children}</p>
+
+const options = {
+  renderMark: {
+    [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+  },
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
+    [BLOCKS.EMBEDDED_ASSET]: node => {
+      return (
+        <>
+          <h2>Embedded Asset</h2>
+          <pre>
+            <code>{JSON.stringify(node, null, 2)}</code>
+          </pre>
+        </>
+      )
+    },
+  },
+}
+
+const Project = ({
+  description,
+  github,
+  image: { gatsbyImageData },
+  stack,
+  title,
+  url,
+  index,
+}) => {
+  const desc = renderRichText(description, options)
+  console.log(desc)
+  const img = getImage(gatsbyImageData)
   return (
     <article className="project">
-      {image && (
-        <Image
-          style={{ objectFit: "contain !important" }}
-          className="project-img"
-          fluid={filteredImg}
-        />
-      )}
+      {gatsbyImageData && <GatsbyImage className="project-img" image={img} />}
       <div className="project-info">
         <span className="project-number">
           {index < 9 ? `0${index + 1}` : index + 1}.
         </span>
         <h3>{title}</h3>
-        <ReactMarkdown className="project-desc">
-          {description}
-        </ReactMarkdown>
+        {renderRichText(description, options)} 
         <div className="project-stack">
           {stack.map((title, index) => (
             <span key={index}>{title}</span>

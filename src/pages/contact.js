@@ -1,8 +1,9 @@
-import React from "react"
-import { FaCheckCircle } from "react-icons/fa"
+import React from "react" 
+import FormSubmitted from "../components/FormSubmitted"
 import Layout from "../components/Layout"
 import useForm from "../hooks/useForm"
 import { validateInfo } from "../hooks/validateInfo"
+import "../css/contact.css" 
 const Contact = () => {
   const {
     serverState,
@@ -12,7 +13,6 @@ const Contact = () => {
     handleSubmit,
     handleChange,
   } = useForm(validateInfo)
-
   return (
     <Layout title="Contact" description="Get in touch today">
       <main className="contact-page">
@@ -82,21 +82,10 @@ const Contact = () => {
         </section>
       </main>
       {serverState.submitted && (
-        <section className="form-submitted-bg">
-          <article className="contact-form form-submitted-container">
-            <h2>success</h2>
-            <FaCheckCircle className="icon" />
-            <p>Thank you for reaching out. We'll be in touch soon!</p>
-            <button
-              className="submit-btn btn"
-              onClick={() =>
-                setServerState({ ...serverState, submitted: false })
-              }
-            >
-              ok
-            </button>
-          </article>
-        </section>
+        <FormSubmitted
+          serverState={serverState}
+          setServerState={setServerState}
+        />
       )}
     </Layout>
   )
