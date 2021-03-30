@@ -1,6 +1,6 @@
 import React from "react"
-import Links from "../constants/links"
-import SocialLinks from "../constants/socialLinks"
+import Links from "../../constants/links"
+import SocialLinks from "../../constants/socialLinks"
 import { FaTimes } from "react-icons/fa"
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
@@ -10,6 +10,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       </button>
       <div className="side-container">
         <Links
+          toggleSidebar={toggleSidebar}
           styleClass={`sidebar-links-style ${isOpen ? "sidebar-links" : ""}`}
         />
         <SocialLinks styleClass={`${isOpen ? "sidebar-icons" : ""}`} />

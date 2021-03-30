@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-const data = [
+export const links = [
   {
     id: 1,
     text: "home",
@@ -15,27 +15,27 @@ const data = [
     id: 3,
     text: "projects",
     url: "/projects/",
-  }, 
+  },
   {
     id: 4,
     text: "contact",
     url: "/contact/",
   },
-]
+] 
 
-const tempLinks = data.map(link => {
-  return (
-    <li key={link.id}>
-      <Link to={link.url}>{link.text}</Link>
-    </li>
-  )
-}) 
-
-const Links = ({ styleClass }) => {
+const Links = ({ styleClass, toggleSidebar }) => {
   return (
     <nav>
       <ul className={`page-links ${styleClass ? styleClass : ""}`}>
-        {tempLinks}
+        {links.map(link => {
+          return (
+            <li key={link.id}>
+              <Link to={link.url} onClick={toggleSidebar}>
+                {link.text}
+              </Link>
+            </li>
+          )
+        })}
       </ul>
     </nav>
   )

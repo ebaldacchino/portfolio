@@ -1,7 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "../assets/twitter-img.png"
+import Image from "../../assets/twitter-img.png"
 import { useLocation } from "@reach/router"
 
 const query = graphql`
@@ -13,7 +13,6 @@ const query = graphql`
         image
         siteUrl
         siteTitle: title
-        twitterUsername
       }
     }
   }
@@ -27,7 +26,7 @@ const SEO = ({ title, description }) => {
         siteTitle,
         siteUrl,
         image,
-        twitterUsername,
+        // twitterUsername,
         author,
       },
     },
