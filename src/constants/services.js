@@ -23,7 +23,7 @@ const Services = [
     icon: <FaServer className="service-icon" />,
     title: "backend development",
     text:
-      "Most of my backend skills are MERN stack related, as I've been learning so much on the frontend, and don't want to be a jack of all trades, master of none",
+      "Frontend focused, most of my backend skills are currently MERN stack related",
     lists: [
       {
         title: "I can program my backend with",
@@ -53,6 +53,10 @@ const Services = [
           "Firebase",
           "Any environment with WordPress or NodeJS support",
         ],
+      },
+      {
+        title: "Other general technologies I use include",
+        items: ["Webpack", "GitHub"],
       },
     ],
   },

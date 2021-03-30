@@ -1,9 +1,9 @@
 import React from "react"
 import Title from "./Title"
-import services from "../constants/services"
+import services from "../constants/services"  
 import "../css/services.css"
 
-const Services = () => {
+const Services = () => { 
   return (
     <section className="section bg-grey">
       <Title title="services" />
