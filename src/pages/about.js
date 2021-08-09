@@ -11,6 +11,7 @@ const About = () => {
           className="about-img"
           src="../assets/hero.svg"
           alt="Hero image"
+          placeholder="blurred"
         />
         <article className="about-text">
           <Title title="about me" />
