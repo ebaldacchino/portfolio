@@ -9,7 +9,7 @@ const About = () => {
       <section className="section-center about-center">
         <StaticImage
           className="about-img"
-          src="../assets/hero-img.png"
+          src="../assets/hero.svg"
           alt="Hero image"
         />
         <article className="about-text">

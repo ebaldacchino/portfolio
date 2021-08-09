@@ -21,7 +21,7 @@ const Hero = () => {
         </article>
         <StaticImage
           className="hero-img"
-          src="../assets/hero-img.png"
+          src="../assets/hero.svg"
           alt="Hero Image"
           placeholder="blurred"
         />
