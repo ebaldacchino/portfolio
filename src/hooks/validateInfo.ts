@@ -1,5 +1,12 @@
-export const validateInfo = ({ name, email, phone, message }) => {
-  let errors = {}
+interface IValidateInfo {
+  name: string;
+  email: string;
+  phone: number;
+  message: string;
+}
+
+export const validateInfo = ({ name, email, phone, message }: IValidateInfo) => {
+  let errors: Partial<IValidateInfo> = {}
 
   if (!name.trim()) {
     errors.name = "Name required"

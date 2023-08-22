@@ -4,6 +4,8 @@ import Project from "./Project"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import "../css/projects.css"
+import { ImageDataLike } from "gatsby-plugin-image";
+import { ContentfulRichTextGatsbyReference, RenderRichTextData } from "gatsby-source-contentful/rich-text";
 
 const query = graphql`
   {
@@ -25,12 +27,30 @@ const query = graphql`
   }
 `
 
-const Projects = ({ title, showLink }) => {
+interface ProjectsProps {
+  title: string
+  showLink?: boolean
+}
+
+export interface IProject {
+  description: RenderRichTextData<ContentfulRichTextGatsbyReference>
+  github: string
+  image: {
+    gatsbyImageData: ImageDataLike
+  }
+  stack: string[]
+  title: string
+  url: string
+  index: number
+  featured: boolean
+}
+
+const Projects = ({ title, showLink }: ProjectsProps) => {
   const {
     allContentfulProject: { projects },
-  } = useStaticQuery(query)
+  }: { allContentfulProject: { projects: IProject[] } } = useStaticQuery(query)
 
-  const displayedProjects = showLink
+  const displayedProjects: IProject[] = showLink
     ? projects.filter(project => project.featured).slice(0, 3)
     : projects
 
@@ -39,7 +59,7 @@ const Projects = ({ title, showLink }) => {
       <section className="section projects">
         <Title title={title} />
         <div className="section-center projects-center">
-          {displayedProjects.map((project, index) => (
+          {displayedProjects.map((project, index: number) => (
             <Project {...project} index={index} key={index} />
           ))}
         </div>

@@ -17,7 +17,13 @@ const query = graphql`
     }
   }
 `
-const SEO = ({ title, description }) => {
+
+interface SeoProps {
+  title: string
+  description?: string
+}
+
+const SEO = ({ title, description }: SeoProps) => {
   const { pathname } = useLocation()
   const {
     site: {
@@ -39,7 +45,7 @@ const SEO = ({ title, description }) => {
     description: description || siteDescription,
     image: `${siteUrl}${Image || image}`,
     url: `${siteUrl}${pathname}`,
-  } 
+  }
   return (
     <Helmet htmlAttributes={{ lang: "en" }} title={seo.title}>
       <meta name="description" content={seo.description} />

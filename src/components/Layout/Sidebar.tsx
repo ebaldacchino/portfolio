@@ -2,7 +2,13 @@ import React from "react"
 import Links from "../../constants/links"
 import SocialLinks from "../../constants/socialLinks"
 import { FaTimes } from "react-icons/fa"
-const Sidebar = ({ isOpen, toggleSidebar }) => {
+
+interface SidebarProps {
+  isOpen: boolean
+  toggleSidebar: () => void
+}
+
+const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
   return (
     <aside className={`sidebar ${isOpen ? "show-sidebar" : ""}`}>
       <button onClick={toggleSidebar} className="close-btn">
@@ -10,7 +16,6 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       </button>
       <div className="side-container">
         <Links
-          toggleSidebar={toggleSidebar}
           styleClass={`sidebar-links-style ${isOpen ? "sidebar-links" : ""}`}
         />
         <SocialLinks styleClass={`${isOpen ? "sidebar-icons" : ""}`} />

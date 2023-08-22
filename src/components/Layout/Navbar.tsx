@@ -2,7 +2,12 @@ import React from "react"
 import { Link } from "gatsby"
 import { FaAlignRight } from "react-icons/fa"
 import PageLinks from "../../constants/links"
-const Navbar = ({ toggleSidebar }) => {
+
+interface NavbarProps {
+  toggleSidebar: () => void
+}
+
+const Navbar = ({ toggleSidebar }: NavbarProps) => {
   return (
     <nav className="navbar">
       <div className="nav-center">
@@ -16,7 +21,7 @@ const Navbar = ({ toggleSidebar }) => {
             <FaAlignRight />
           </button>
         </div>
-        <PageLinks styleClass="nav-links"></PageLinks>
+        <PageLinks styleClass="nav-links" />
       </div>
     </nav>
   )

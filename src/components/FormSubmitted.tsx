@@ -1,7 +1,14 @@
-import React from "react"
+import React, { SetStateAction } from "react"
 import { FaCheckCircle } from "react-icons/fa"
 import "../css/form-submitted.css"
-const FormSubmitted = ({ serverState, setServerState}) => {
+import { IServerState } from "../hooks/useForm"
+
+interface FormSubmittedProps {
+  serverState: IServerState
+  setServerState: React.Dispatch<SetStateAction<IServerState>>
+}
+
+const FormSubmitted = ({ serverState, setServerState }: FormSubmittedProps) => {
   return (
     <section className="form-submitted-bg">
       <article className="contact-form form-submitted-container">

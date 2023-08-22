@@ -21,18 +21,20 @@ export const links = [
     text: "contact",
     url: "/contact/",
   },
-] 
+]
 
-const Links = ({ styleClass, toggleSidebar }) => {
+interface LinksProps {
+  styleClass: string;
+}
+
+const Links = ({ styleClass }: LinksProps) => {
   return (
     <nav>
       <ul className={`page-links ${styleClass ? styleClass : ""}`}>
         {links.map(link => {
           return (
             <li key={link.id}>
-              <Link to={link.url} onClick={toggleSidebar}>
-                {link.text}
-              </Link>
+              <Link to={link.url}>{link.text}</Link>
             </li>
           )
         })}

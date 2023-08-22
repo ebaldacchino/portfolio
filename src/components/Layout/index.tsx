@@ -5,7 +5,15 @@ import Sidebar from "./Sidebar"
 import Footer from "./Footer"
 import Main from "./Main"
 import { FaArrowCircleUp } from "react-icons/fa"
-const Layout = ({ children, title, description, mainStyle }) => {
+
+interface LayoutProps {
+  children: React.ReactNode
+  title: string
+  description?: string
+  mainStyle?: string
+}
+
+const Layout = ({ children, title, description, mainStyle }: LayoutProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const toggleSidebar = () => setIsOpen(!isOpen)
   const [offset, setOffset] = useState(0)
@@ -24,7 +32,7 @@ const Layout = ({ children, title, description, mainStyle }) => {
   return (
     <>
       <SEO title={title} description={description} />
-      <Navbar toggleSidebar={toggleSidebar} isOpen={isOpen} />
+      <Navbar toggleSidebar={toggleSidebar} />
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
 
       <Main style={mainStyle}>{children}</Main>

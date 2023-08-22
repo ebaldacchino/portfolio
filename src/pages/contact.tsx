@@ -61,7 +61,7 @@ const Contact = () => {
             <textarea
               name="message"
               placeholder="message"
-              rows="5"
+              rows={5}
               className={`form-control ${
                 !serverState.submitting
                   ? ""

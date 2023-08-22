@@ -2,11 +2,17 @@ import React from "react"
 import { motion } from "framer-motion"
 import { links } from "../../constants/links"
 import { useLocation } from "@reach/router"
-const Main = ({ children, style }) => {
+
+interface MainProps {
+  children: React.ReactNode
+  style?: string
+}
+
+const Main = ({ children, style }: MainProps) => {
   const { pathname, state } = useLocation()
 
   const urls = links.map(({ url }) => url)
-  const prevIndex = state && urls.indexOf(state.referrer)
+  const prevIndex = state ? urls.indexOf(state.referrer) : 0
 
   const currentIndex = urls.indexOf(pathname)
 
@@ -15,7 +21,7 @@ const Main = ({ children, style }) => {
     (currentIndex !== -1 && prevIndex > currentIndex)
   return (
     <motion.main
-      className={style ? style : ""}
+      className={style ?? ""}
       initial={{ opacity: 0, x: fromLeft ? "-10vw" : "10vw" }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0 }}

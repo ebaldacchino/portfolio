@@ -3,16 +3,21 @@ import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { IProject } from "./Projects"
 
-const Bold = ({ children }) => <span className="bold">{children}</span>
-const Text = ({ children }) => <p className="align-center">{children}</p>
+const Bold = ({ children }: { children: string }) => (
+  <span className="bold">{children}</span>
+)
+const Text = ({ children }: { children: string }) => (
+  <p className="align-center">{children}</p>
+)
 
 const options = {
   renderMark: {
-    [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+    [MARKS.BOLD]: (text: string) => <Bold>{text}</Bold>,
   },
   renderNode: {
-    [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
+    [BLOCKS.PARAGRAPH]: (node, children: string) => <Text>{children}</Text>,
     [BLOCKS.EMBEDDED_ASSET]: node => {
       return (
         <>
@@ -34,11 +39,11 @@ const Project = ({
   title,
   url,
   index,
-}) => {
+}: IProject) => {
   const img = getImage(gatsbyImageData)
   return (
     <article className="project">
-      {gatsbyImageData && (
+      {!!img && (
         <GatsbyImage
           className="project-img"
           image={img}

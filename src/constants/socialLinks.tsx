@@ -43,7 +43,7 @@ const links = data.map(link => {
   )
 })
 
-const SocialLinks = ({ styleClass }) => {
+const SocialLinks = ({ styleClass }: { styleClass?: string }) => {
   return (
     <ul className={`social-links ${styleClass ? styleClass : ""}`}>{links}</ul>
   )
