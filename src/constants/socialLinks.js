@@ -25,7 +25,7 @@ const data = [
   {
     id: 4,
     icon: <FaMailBulk className="social-icon" />,
-    url: "mailto: edward.baldacchino@live.vu.edu.au",
+    url: "mailto: edwardjbaldacchino@gmail.com",
   },
 ]
 const links = data.map(link => {
