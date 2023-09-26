@@ -9,7 +9,7 @@ const About = () => {
       <section className="section-center about-center">
         <StaticImage
           className="about-img"
-          src="../assets/hero.svg"
+          src="../assets/hero-img.svg"
           alt="Hero image"
           placeholder="blurred"
         />
