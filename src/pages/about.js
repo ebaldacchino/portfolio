@@ -16,15 +16,19 @@ const About = () => {
         <article className="about-text">
           <Title title="about me" />
           <p>
-            I'm a self taught developer based in Melbourne, Australia. Native in
-            Javascript, PHP is like that second language I had to learn in high
-            school. When I'm giving my eyes a break from a computer screen,
-            you'll most likely find me at the gym.
+            I'm a self taught developer based in Melbourne, Australia. Currently
+            employed by Clear21 as a .NET/React developer. At a high level, my
+            current task is building the company's React component library
+            complete with integration testing using <code>Storybook</code>,
+            combined with integrating React into a pre-existing Knockout JS
+            frontend solution. Native in TypeScript, PHP is like that second
+            language I had to learn in high school. When I'm giving my eyes a
+            break from a computer screen, you'll most likely find me at the gym.
           </p>
           <p>
-            More comfortable with front end, but open to using whatever tool
-            that can complete the task. The main objective is to find a way to
-            do it well.
+            More proficient with front end, but open to using whatever tool that
+            can complete the task. The main objective is to find a way to do it
+            well.
           </p>
           <p>
             Currently seeking professional opportunities to continue growing and
@@ -32,17 +36,24 @@ const About = () => {
           </p>
           <div className="about-stack">
             {[
-              "html",
-              "css",
-              "javascript",
+              "typescript",
               "react",
+              "next js",
               "gatsby",
+              "c#",
+              "storybook",
+              "tailwind",
+              "styled components",
+              "material ui",
+              "javascript",
               "node",
               "mongodb",
+              "contentful",
               "webpack",
               "wordpress",
               "php",
-              "contentful",
+              "html",
+              "css",
             ].map((tech, index) => (
               <span key={index}>{tech}</span>
             ))}
