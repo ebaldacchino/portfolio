@@ -1,8 +1,8 @@
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   height: 5rem;
   display: flex;
   align-items: center;
@@ -44,7 +44,7 @@ font-size: 2rem;
 }
 .nav-header h3 span {
   color: var(--clr-grey-1);
-} 
+}
 .toggle-btn {
   font-size: 2rem;
   background: transparent;
@@ -86,10 +86,5 @@ font-size: 2rem;
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-  }
-}
-@media screen and (min-width: 992px) {
-  .navbar {
-    background: transparent;
   }
 }

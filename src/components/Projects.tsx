@@ -56,7 +56,7 @@ const Projects = ({ title, showLink }: ProjectsProps) => {
 
   return (
     <section className="projects-page">
-      <section className="section projects">
+      <section className="projects">
         <Title title={title} />
         <div className="section-center projects-center">
           {displayedProjects.map((project, index: number) => (

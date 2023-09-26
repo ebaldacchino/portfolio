@@ -72,10 +72,12 @@ body {
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
-  margin-top: 5rem;
   max-width: 100vw;
   height: fit-content;
   overflow: hidden;
+}
+#gatsby-focus-wrapper {
+  padding-top: 5rem;
 }
 html {
   overflow-x: hidden;
