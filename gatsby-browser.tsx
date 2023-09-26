@@ -9,7 +9,7 @@ import "./src/css/footer.css"
 export const onClientEntry = () => window.scrollTo(0, 0)
 
 export const wrapPageElement = ({ element }) => (
-  <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
+  <AnimatePresence mode="wait">{element}</AnimatePresence>
 )
 export const onRouteUpdate = ({ location, prevLocation }) => {
   if (location && location.state)
