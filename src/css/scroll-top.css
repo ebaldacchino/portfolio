@@ -1,9 +1,5 @@
 .scrollTop {
   position: fixed;
-  width: 2.5rem;
-  min-width: 2.5rem;
-  height: 2.5rem;
-  min-height: 2.5rem;
   bottom: 2rem;
   right: 2rem;
   align-items: flex-end;
@@ -11,11 +7,19 @@
   z-index: 1000;
   cursor: pointer;
   animation: fadeIn 0.3s;
-  transition: opacity 0.4s;
-  color: var(--clr-primary-5);
+  transition: var(--transition);
   opacity: 0.75;
+  background: transparent;
+  border: none;
 }
-.scrollTop:hover {
+.scrollTop > * {
+  fill: var(--clr-primary-5);
+  width: 2.5rem;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  min-height: 2.5rem;
+}
+.scrollTop:is(:hover, :focus-visible) {
   opacity: 1;
 }
 @keyframes fadeIn {

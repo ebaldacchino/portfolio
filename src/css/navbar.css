@@ -26,6 +26,17 @@ font-size: 2rem;
   color: var(--clr-primary-5);
   text-shadow: 0 0.2rem 0.175rem rgba(0, 0, 0, 0.2);
   margin-bottom: 0;
+  transition: var(--transition);
+}
+.nav-header h3 span {
+  color: var(--clr-grey-1);
+  transition: var(--transition);
+}
+.nav-header a:is(:hover, :focus) h3 {
+  color: var(--clr-grey-1);
+}
+.nav-header a:is(:hover, :focus) h3 span {
+  color: var(--clr-primary-5);
 }
 @media screen and (max-width: 1024px) {
   .nav-header h3, .nav-header h3 span {
@@ -53,7 +64,7 @@ font-size: 2rem;
   cursor: pointer;
   transition: var(--transition);
 }
-.toggle-btn:hover {
+.toggle-btn:is(:hover, :focus-visible) {
   color: var(--clr-primary-2);
 }
 .nav-links {
@@ -78,7 +89,7 @@ font-size: 2rem;
     transition: var(--transition);
     padding: 0.5rem 0;
   }
-  .nav-links a:hover {
+  .nav-links a:is(:hover, :focus-visible) {
     color: var(--clr-primary-5);
     box-shadow: 0 0.125rem var(--clr-primary-5);
   }

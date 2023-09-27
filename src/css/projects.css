@@ -69,14 +69,16 @@
 .about-stack span {
   margin-top: 0.5rem;
 }
-.project-icon {
+.project-links a {
   color: var(--clr-primary-5);
+}
+.project-links a:is(:hover, :focus) {
+  color: var(--clr-primary-1);
+}
+.project-icon {
   font-size: 1.25rem;
   margin-right: 0.5rem;
   transition: var(--transition);
-}
-.project-icon:hover {
-  color: var(--clr-primary-1);
 }
 @media screen and (min-width: 576px) {
   .project-img {

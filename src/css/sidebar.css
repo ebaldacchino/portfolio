@@ -32,7 +32,7 @@
   transition: var(--transition);
   border-radius: var(--radius);
 }
-.sidebar-links li a:hover {
+.sidebar-links li a:is(:hover, :focus-visible) {
   background: var(--clr-primary-9);
   color: var(--clr-primary-5);
 }
@@ -45,6 +45,10 @@
   border-color: transparent;
   color: var(--clr-red-dark);
   cursor: pointer;
+  transition: var(--transition);
+}
+.close-btn:is(:hover, :focus-visible) {
+  color: var(--clr-red-light);
 }
 @media screen and (min-width: 992px) {
   .sidebar {

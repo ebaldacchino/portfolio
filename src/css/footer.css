@@ -20,6 +20,6 @@
 .footer .social-link {
   color: var(--clr-white);
 }
-.footer .social-link:hover {
+.footer .social-link:is(:hover, :focus-visible) {
   color: var(--clr-primary-5);
 }

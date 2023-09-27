@@ -37,7 +37,9 @@ const Layout = ({ children, title, description, mainStyle }: LayoutProps) => {
 
       <Main style={mainStyle}>{children}</Main>
       {offset > windowHeight / 2 && (
-        <FaArrowCircleUp className="scrollTop" onClick={scrollTop} />
+        <button className="scrollTop" onClick={scrollTop}>
+          <FaArrowCircleUp />
+        </button>
       )}
       <Footer />
     </>
