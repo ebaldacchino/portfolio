@@ -2,6 +2,7 @@ import React from "react"
 import Links from "../../constants/links"
 import SocialLinks from "../../constants/socialLinks"
 import { FaTimes } from "react-icons/fa"
+import { useMediaQuery } from "../../hooks/useMediaQuery"
 
 interface SidebarProps {
   isOpen: boolean
@@ -13,9 +14,12 @@ const TRANSITION_DURATION_MILLISECONDS = 300
 const Sidebar = ({ toggleSidebar, ...props }: SidebarProps) => {
   let timer = React.useRef<NodeJS.Timeout | null>(null)
   const [isOpenInternal, setIsOpenInternal] = React.useState(false)
+  const isDesktop = useMediaQuery("(min-width: 992px)")
 
   React.useEffect(() => {
-    if (props.isOpen) {
+    const isOpening = props.isOpen && !isDesktop
+
+    if (isOpening) {
       setIsOpenInternal(true)
     } else {
       close()
@@ -26,7 +30,7 @@ const Sidebar = ({ toggleSidebar, ...props }: SidebarProps) => {
         clearTimeout(timer.current)
       }
     }
-  }, [props.isOpen])
+  }, [props.isOpen, isDesktop])
 
   function close() {
     timer.current = setTimeout(() => {
@@ -34,7 +38,7 @@ const Sidebar = ({ toggleSidebar, ...props }: SidebarProps) => {
     }, TRANSITION_DURATION_MILLISECONDS)
   }
 
-  const isRendered = isOpenInternal || props.isOpen
+  const isRendered = isOpenInternal || (props.isOpen && !isDesktop)
 
   if (!isRendered) {
     return null
